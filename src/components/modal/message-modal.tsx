@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, FormEvent, ChangeEvent } from 'react';
+import { useState, useContext, FormEvent, ChangeEvent } from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -12,7 +12,7 @@ import LoadingContext from '@src/code/context/loading-context';
 import { useHttpClient } from '@src/code/hooks/http-hook';
 // import BasicTextFields from '@src/components/form/form-basic';
 // import ValidationTextFields from '@src/components/form/form-validation';
-import { Product } from '@src/code/types/Product';
+// import { Product } from '@src/code/types/Product';
 import CustomizedMenus from '@src/components/dropdown/customized-menu';
 // import Grid from '@mui/material/Grid';
 
@@ -146,26 +146,26 @@ export default function ProductModal(props: { open: boolean; setOpen: (x: boolea
 
   // --------------------------------------------
 
-  const resetModal = async (products: Product[] | null = null, t = '', m = '') => {
-    if (products) {
-      const products: Product[] = await sendRequest('/api/products');
-      const sorted_products = products.sort((a: Product, b: Product) => (a.id > b.id ? 1 : -1));
-      // props.setProducts(sorted_products);
-      // props.setSortOption('id');
-    }
+  // const resetModal = async (products: Product[] | null = null, t = '', m = '') => {
+  //   if (products) {
+  //     const products: Product[] = await sendRequest('/api/products');
+  //     const sorted_products = products.sort((a: Product, b: Product) => (a.id > b.id ? 1 : -1));
+  //     // props.setProducts(sorted_products);
+  //     // props.setSortOption('id');
+  //   }
 
-    setTitle(t);
-    setMessage(m);
+  //   setTitle(t);
+  //   setMessage(m);
 
-    setTimeout(() => {
-      // -wait for the modal to close before changing the button back
-      setEnableDelete(false);
-    }, 500);
-  };
+  //   setTimeout(() => {
+  //     // -wait for the modal to close before changing the button back
+  //     setEnableDelete(false);
+  //   }, 500);
+  // };
 
-  useEffect(() => {
-    console.log('title: ', title);
-  }, [title]);
+  // useEffect(() => {
+  //   console.log('title: ', title);
+  // }, [title]);
 
   // --------------------------------------------
 

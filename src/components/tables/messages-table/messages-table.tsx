@@ -80,7 +80,7 @@ function Row(p: {
   setAllChecked: any;
   all_unchecked: boolean;
   rows_per_page: number;
-  setMessages: any;
+  // setMessages: any;
 }) {
   const { row } = p;
   const [open, setOpen] = useState(false);
@@ -197,7 +197,7 @@ function Row(p: {
         </TableCell>
 
         <TableCell align="center" sx={{ width: '30px' }}>
-          {<Star starred={row.starred} id={row.message_id} setMessages={row.setMessages} />}
+          {/* {<Star starred={row.starred} id={row.message_id} setMessages={row.setMessages} />} */}
         </TableCell>
 
         <TableCell sx={{ width: '50px' }}>
@@ -247,7 +247,7 @@ export default function MessagesTable(props: {
   filter_criterion: string;
   setFilterCriterion: any;
   messages: any;
-  setMessages: any;
+  // setMessages: any;
 }) {
   // --------------------------------------------
 
@@ -375,7 +375,7 @@ export default function MessagesTable(props: {
       //      ---I need to modify the body to send the proper data.
       //    --method 2: make a second HTTP request to grab the page data again
       //      ---Do this first!
-      getPage();
+      // getPage();
 
       // authCtx.login(data.token);
       notificationCtx.endSuccess({ message: 'update successful!' });
@@ -495,7 +495,7 @@ export default function MessagesTable(props: {
                 setAllChecked={setAllChecked}
                 all_unchecked={all_unchecked}
                 rows_per_page={rows_per_page}
-                setMessages={props.setMessages}
+                // setMessages={props.setMessages}
               />
             ))}
           </TableBody>

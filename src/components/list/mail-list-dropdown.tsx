@@ -4,7 +4,7 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import InboxIcon from '@mui/icons-material/Inbox';
-import LabelIcon from '@mui/icons-material/Label';
+// import LabelIcon from '@mui/icons-material/Label';
 import MarkunreadMailboxIcon from '@mui/icons-material/MarkunreadMailbox';
 import SendIcon from '@mui/icons-material/Send';
 import StarBorder from '@mui/icons-material/StarBorder';
@@ -128,7 +128,7 @@ export default function MailListDropdown(p: {
     // if (!isNaN(date_range[0]) && !isNaN(date_range[1])) {
     p.setActiveRow(0); // inbox row
     setOpen(true);
-    do_fetch({ box: 'inbox', sub_box: 'unread & read' });
+    do_fetch({ box: 'inbox', sub_box: 'unread & read', category: null });
     // }
   }, []);
 
