@@ -1,0 +1,117 @@
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+} */
+
+$box-size: 45px;
+$row-vertical-padding: 1px;
+$box-width: calc(#{$box-size} + calc(2 * #{$row-vertical-padding}));
+
+$box-height: calc(#{$box-size} + calc(2 * #{$row-vertical-padding}));
+$rows: 7;
+$cols: 7;
+$border-color: #72bcf7;
+$date-range-color: #72bcf7;
+
+.calendar-container {
+  background: white;
+  display: grid;
+  grid-template-rows: repeat($rows, $box-height);
+  gap: 1px;
+  padding: 2px;
+  color: white;
+}
+
+.row {
+  background: black;
+  display: grid;
+  grid-template-columns: repeat($cols, $box-width);
+  gap: 0px;
+  padding: $row-vertical-padding 0;
+}
+
+.col {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s ease;
+
+  // &:hover {
+  // color: orange;
+  // transform: scale(1.1);
+  // }
+}
+
+.start {
+  border: solid $border-color 2px;
+  border-right: none;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background: $date-range-color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.end {
+  border: solid $border-color 2px;
+  border-left: none;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background: $date-range-color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle {
+  border-top: solid $border-color 2px;
+  border-bottom: solid $border-color 2px;
+  background: $date-range-color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// .on-start-and-end {
+.single {
+  border: solid $border-color 2px;
+  border-radius: 50%;
+  background: $date-range-color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ellipses_container {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+
+  .ellipses {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background: deepskyblue;
+  }
+}
+
+.day-titles {
+  color: gray;
+}
+
+.future {
+  opacity: 0.15;
+}

@@ -1,0 +1,17 @@
+$left: 250px;
+$right: 1fr;
+
+.container {
+  display: grid;
+  grid-template-columns: $left $right;
+  padding-right: 1rem; // basically width of slider
+
+  .left {
+    background: #000000;
+    padding: 1rem;
+  }
+
+  .right {
+    // background: lightblue;
+  }
+}

@@ -1,0 +1,43 @@
+$clr: rgba(255, 0, 0, 0.3);
+$arrow-size: 10px;
+
+.element {
+  position: relative;
+}
+
+.element::before,
+.element::after {
+  --scale: 0;
+
+  position: absolute;
+  top: -0.25rem;
+  left: 50%; // 50% of .element
+
+  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale)); // 50% / 100% of .element::after
+  transition: 50ms transform;
+  transform-origin: bottom center;
+}
+
+.element::before {
+  --translate-y: calc(-100% - #{$arrow-size});
+  content: attr(data-tooltip);
+  padding: 0.5rem;
+  width: max-content;
+  max-width: 100%; // 100% of .element
+  text-align: center; // If > 1 line
+  background: $clr;
+  border-radius: 0.3rem;
+}
+
+.element.error::before,
+.element.error::after {
+  --scale: 1;
+}
+
+.element::after {
+  --translate-y: calc(-1 * #{$arrow-size});
+  content: '';
+  border: $arrow-size solid transparent; // triangle-hack
+  border-top-color: $clr;
+  transform-origin: top center;
+}

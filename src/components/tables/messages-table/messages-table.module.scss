@@ -1,0 +1,27 @@
+.filter_container {
+  // background: darkorange;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 2rem;
+
+  .radio_container {
+    // background: deepskyblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2rem 3rem;
+  }
+}
+
+.active_sort_criterion {
+  // background: red;
+  color: darkorchid !important;
+  text-decoration: underline;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+.pointer {
+  cursor: pointer;
+}

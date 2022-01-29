@@ -1,0 +1,120 @@
+$bg1_product: hsla(360, 99%, 70%, 1);
+$bg2_product: hsla(359, 99%, 64%, 1);
+$border_product: solid 1px $bg2_product;
+$shadow-1_product: 0 0.5rem 1.125rem -0.5rem rgba(254, 105, 106, 90%);
+$shadow-2_product: 0 0.75rem 2rem -0.5em rgba(0, 0, 0, 0.3);
+
+$bg1_auth: rgba(255, 255, 255, 0.15);
+// $bg2_auth: darkorchid;
+$border_auth: none;
+$shadow-1_auth: 0px 3px 1px -2px rgba(0, 0, 0, 20%), 0px 2px 2px 0px rgba(0, 0, 0, 14%),
+  0px 1px 5px 0px rgba(0, 0, 0, 12%);
+$shadow-2_auth: 0 1px 13px 0px black;
+
+.button {
+  // display: grid;
+  // place-items: center;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+
+  // button:hover,
+  // button:active {
+  //   background: #33059e;
+  //   border-color: #33059e;
+  //   color: white;
+  // }
+
+  button:disabled,
+  button:disabled:hover,
+  button:disabled:active {
+    // background: rgba(0, 0, 0, 0.01);
+    // color: #292929;
+    // border-color: rgba(0, 0, 0, 0.05);
+    cursor: not-allowed;
+  }
+
+  &.product {
+    width: 150px;
+    padding: 0.6rem;
+    background: $bg1_product;
+    box-shadow: $shadow-1_product;
+    border: $border_product;
+    color: white;
+  }
+  &.auth {
+    width: 100%;
+    padding: 1rem;
+    background: $bg1_auth;
+    box-shadow: $shadow-1_auth;
+    border: $border_auth;
+    color: white;
+  }
+  &.navbar {
+    width: 100%;
+    padding: 0.5rem;
+    background: $bg1_auth;
+    box-shadow: $shadow-1_auth;
+    border: $border_auth;
+    color: black;
+  }
+  border-radius: 5px;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    color: inherit;
+  }
+}
+
+.pseudo_hover {
+  & {
+    position: relative;
+  }
+
+  &:hover:not(:disabled),
+  &:active:not(:disabled) {
+    // transform: translateY(-0.35em) scale(1.02);
+    transform: translateY(-0.01em) scaleX(1.01) scaleY(1.01);
+  }
+  &:disabled,
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &.product::after {
+    box-shadow: $shadow-2_product;
+  }
+  &.auth::after {
+    box-shadow: $shadow-2_auth;
+  }
+  &.navbar::after {
+    box-shadow: $shadow-2_auth;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    // box-shadow: 20px 20px 2rem 1rem rgba(255, 0, 0, 0.9);
+    // 0. (optional) Inset (on top of background, under content)
+    //  -Can be used to appear as if a hole is in the page.
+    // 1. (required) Horizontal offset
+    // 2. (required) Vertical offset
+    // 3. (optional) Blur radius
+    // 4. (optional) Spread (how far are we going before we applythe blur)
+    //  -Negative spread is often used.
+    // 5. (optional) Color (default matches the color property)
+  }
+
+  &:hover:not(:disabled)::after {
+    opacity: 1;
+  }
+}

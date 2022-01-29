@@ -1,0 +1,18 @@
+@import '@style/colors.module';
+
+.svg_container {
+  // background: hotpink;
+  // width: 100%;
+  // height: 100%;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  .svg {
+    // background: yellow;
+    transition: all 0.2s ease;
+  }
+  .svg:hover {
+    color: $clr-primary;
+    transform: rotate(45deg) scale(1.125);
+  }
+}

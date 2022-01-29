@@ -1,0 +1,11 @@
+.row {
+  background: deepskyblue;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    // background: deepskyblue;
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,57 @@
+@import '@style/colors.module';
+
+// ==============================================
+
+.filter_container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 350px;
+  background: $clr-surface;
+  height: 50px;
+  border-radius: 0.5rem;
+}
+
+.input[type='checkbox'] {
+  cursor: pointer;
+}
+
+.form-check-label {
+  cursor: pointer;
+}
+
+.element-container {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  // background: lightblue;
+}
+
+.filter-element {
+  // display: inline-flex;
+  // width: 200px;
+  // height: 150px;
+  margin: 5px;
+}
+
+.orange {
+  // background-color: #f38630;
+  background-color: transparent;
+}
+.green {
+  // background-color: #6fb936;
+  background-color: transparent;
+}
+.purple {
+  // background-color: #7d4696;
+  background-color: transparent;
+}
+
+div.row {
+  // background: hotpink;
+  width: 100%;
+}

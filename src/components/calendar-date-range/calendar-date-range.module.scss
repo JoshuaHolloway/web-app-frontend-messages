@@ -1,0 +1,27 @@
+.calendar-containers {
+  display: flex;
+}
+
+.display-container {
+  position: relative;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+
+  .date {
+    &:nth-child(1),
+    &:nth-child(3) {
+      position: absolute;
+    }
+
+    &:nth-child(1) {
+      left: 218px;
+    }
+    &:nth-child(3) {
+      left: 362px;
+    }
+  }
+}

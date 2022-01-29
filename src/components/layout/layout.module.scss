@@ -1,0 +1,30 @@
+$navbar_height: 100px;
+
+.app {
+  position: relative;
+
+  .nav {
+    position: fixed;
+    height: $navbar_height;
+    width: 100vw;
+  }
+
+  .main {
+    position: fixed;
+    top: $navbar_height;
+    left: 0;
+    height: calc(100vh - #{$navbar_height});
+    width: 100vw;
+    overflow-y: scroll;
+    z-index: -1; // navbar -> .dropdown z-index: 1
+  }
+}
+
+.auth {
+  height: 100vh;
+  width: 100vw;
+  .main {
+    height: 100%;
+    width: 100%;
+  }
+}

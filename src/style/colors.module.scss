@@ -1,0 +1,38 @@
+$clr-primary: #4e54c8;
+$clr-primary-opaque-0: hsla(237, 53%, 55%, 0.7);
+$clr-primary-opaque-1: hsla(237, 53%, 55%, 0.5);
+$clr-primary-opaque-2: hsla(237, 53%, 55%, 0.2);
+
+$clr-secondary: #6c757d;
+$clr-warning: #ffc107;
+$clr-danger: #fe6767;
+$clr-error: #dc3545;
+$clr-success: #28a745;
+
+$clr-surface: #f3f5f9;
+// ==============================================
+
+// gradients:
+
+$gradient-purple-starting: #7643ab;
+$gradient-purple-ending: #993880;
+$gradient-orange-starting: #c85344;
+$gradient-orange-ending: #e78333;
+$gradient-green-starting: #64c34c;
+$gradient-green-ending: #338f9d;
+
+$orange-grad: linear-gradient(90deg, $gradient-orange-starting, $gradient-orange-ending);
+$green-grad: linear-gradient(90deg, $gradient-green-starting, $gradient-green-ending);
+$purple-grad: linear-gradient(90deg, $gradient-purple-starting, $gradient-purple-ending);
+
+// ==============================================
+:export {
+  primary: $clr-primary;
+  secondary: $clr-secondary;
+  success: $clr-success;
+  warning: $clr-warning;
+  danger: $clr-danger;
+  error: $clr-error;
+
+  // surface: $clr-surface;
+}

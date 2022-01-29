@@ -1,0 +1,110 @@
+$clr-1: rgba(255, 255, 255, 0.4);
+$clr-2: rgba(255, 255, 255, 1);
+$clr-3: #f2f2f2; // light-gray
+$bg-1: #aaa;
+$f-sz: 14px;
+
+.custom_field {
+  // --------------------------------------------
+
+  position: relative;
+  font-size: $f-sz;
+  padding-top: 20px;
+  margin-bottom: 5px;
+
+  // --------------------------------------------
+
+  > input {
+    border: none;
+
+    // -appearance is removed so browser styling does not interfere.
+    appearance: none;
+    background: $bg-1;
+    padding: 12px;
+    border-radius: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    width: 100%;
+    outline: none;
+    font-size: $f-sz;
+
+    transition: background-size 0.3s ease;
+
+    color: $clr-2;
+
+    // - (+)90deg is left to right
+    // - first background layer is on top, last is on bottom.
+    background:
+    //   // - the first one is the one we will change when the field receives focus.
+    //   // - zero-width
+    //   // - center to grow from center
+      linear-gradient(90deg, $clr-2, $clr-2) center bottom / 0 2px no-repeat,
+      linear-gradient(90deg, $clr-1, $clr-1) left bottom / 100% 2px no-repeat,
+      linear-gradient(90deg, transparent, transparent) left bottom / 100% no-repeat; // 100% width and height
+    // <background-color>  <position>  /  <bg-size> (width height) <repeat-style>
+
+    &.error,
+    &.error + .placeholder {
+      color: red;
+    }
+    &.error {
+      background: linear-gradient(90deg, red, red) center bottom / 0 2px no-repeat,
+        linear-gradient(90deg, rgba(255, 0, 0, 0.4), rgba(255, 0, 0, 0.2)) left bottom / 100% 2px no-repeat,
+        linear-gradient(90deg, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.2)) left bottom / 100% no-repeat;
+    }
+  }
+
+  // --------------------------------------------
+
+  // -Animate the underline (the first bg-layer for input)
+  > input:focus,
+  > input:valid {
+    background-size: 100% 2px, 100% 2px, 100%; // width height (only first layer is changed)
+  }
+
+  // --------------------------------------------
+
+  // -When input gains focus, we target the span next to it.
+  // + is the adjacent-combinator selector.
+  // :valid state is used when required field is non-empty.
+  //  --This keeps the placeholder in the top position if field is non-empty.
+  > input:focus + .placeholder,
+  > input:valid + .placeholder {
+    top: 10px;
+    font-size: 10px;
+    color: $clr-3; // light-gray
+  }
+
+  // --------------------------------------------
+
+  > .placeholder {
+    position: absolute;
+    left: 12px;
+
+    // Center vertically
+    top: calc(50% + 10px); // 50% of .custom_field
+    transform: translateY(-50%); // 50% of .placeholder
+    color: $clr-2; // light-gray
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+  }
+
+  // --------------------------------------------
+
+  > .password_toggle {
+    position: absolute;
+    // top: 50%;
+    transform: translateX(-120%);
+    // background: red;
+    height: 100%;
+
+    > div {
+      height: 100%;
+      width: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $clr-3; // light-gray
+    }
+  }
+}

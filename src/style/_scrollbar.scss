@@ -1,0 +1,51 @@
+@import '@style/colors.module';
+
+$clr-not-selected: hsla(240, 6%, 57%, 1);
+$clr-not-selected-opaque: hsla(240, 6%, 57%, 0.7);
+
+$clr-selected: hsla(240, 100%, 98%, 1);
+$background-surface: hsla(240, 12%, 7%, 1);
+$background-primary: hsla(0, 0%, 0%, 1);
+
+// ==============================================
+// Chrome and Safari
+::-webkit-scrollbar {
+  width: 3vw;
+  @import '@src/style/breakpoints';
+  @media only screen and (min-width: #{$sm}) {
+    width: 2vw;
+  }
+  @media only screen and (min-width: #{$md}) {
+    width: 1vw;
+  }
+
+  background: transparent; // rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-track {
+  background: ransparent; //$color-1;
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $clr-primary-opaque-1; //hsla(0, 99%, 70%, 0.5); // rgba(255, 255, 255, 0.2);
+  border-radius: 100vw;
+  border: solid 0.2vw $clr-primary-opaque-2; // hsla(0, 99%, 70%, 0.2);
+
+  transition: all 900ms ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $clr-primary-opaque-0; // hsla(0, 99%, 70%, 0.7);
+}
+// ==============================================
+
+// Firefox
+@supports (scrollbar-color: red blue) {
+  * {
+    // scrollbar-color: <thumb> <track>
+    scrollbar-color: $clr-not-selected transparent;
+    scrollbar-width: thin;
+  }
+}
