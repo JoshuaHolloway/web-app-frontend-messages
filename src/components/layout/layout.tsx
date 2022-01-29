@@ -18,19 +18,10 @@ type Props = {
 const Layout: FC<Props> = (props) => {
   // --------------------------------------------
 
-  const router = useRouter();
-
-  const authCtx = useContext(AuthContext);
   const notificationCtx = useContext(NotificationContext);
   const active_notification = notificationCtx.notification;
 
   const blur_ref = useRef<HTMLDivElement | null>(null);
-
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-    return () => setMounted(false);
-  }, []);
 
   // --------------------------------------------
 

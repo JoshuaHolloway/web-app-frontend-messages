@@ -128,7 +128,7 @@ export default function MailListDropdown(p: {
     // if (!isNaN(date_range[0]) && !isNaN(date_range[1])) {
     p.setActiveRow(0); // inbox row
     setOpen(true);
-    do_fetch({ box: 'inbox', sub_box: 'unread & read', category: null });
+    // do_fetch({ box: 'inbox', sub_box: 'unread & read', category: null });
     // }
   }, []);
 

@@ -3,8 +3,6 @@ import Button from '@mui/material/Button';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import AuthContext from '@src/code/context/auth-context';
-// import CartCtx from '@src/code/context/cart-context';
-// import Button from '@src/components/button/button';
 import css from './navbar.module.scss';
 
 // ==============================================
@@ -12,28 +10,12 @@ import css from './navbar.module.scss';
 const Navbar: FC = () => {
   // --------------------------------------------
 
-  // const cartCtx = useContext(CartCtx);
   const authCtx = useContext(AuthContext);
-
   const router = useRouter();
-
-  // const [mounted, setMounted] = useState(false);
-  // useEffect(() => {
-  //   setMounted(true);
-  //   return () => setMounted(false);
-  // }, []);
-
-  // --------------------------------------------
-
-  // const cartClickHandler = () => {
-  //   cartCtx?.showCart();
-  // };
 
   // --------------------------------------------
 
   const auth_navbar_display = () => {
-    // console.log('[navbar] router.pathname: ', router.pathname);
-
     if (router.pathname === '/auth/login' || router.pathname === '/auth/register') {
       return (
         <Link href="/">
