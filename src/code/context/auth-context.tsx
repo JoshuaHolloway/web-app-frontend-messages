@@ -124,7 +124,7 @@ const AuthContextProvider = (props: Props) => {
     // -re-direct if NOT auto-login (i.e. if manual login)
     if (!is_auto_login) {
       if (decoded.role === 'admin') {
-        router.push('/admin/orders');
+        router.push('/mail');
       } else {
         router.push('/');
       }

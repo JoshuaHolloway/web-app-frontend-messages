@@ -83,11 +83,6 @@ const Layout: FC<Props> = (props) => {
     <>
       {/* ----------------------------------- */}
 
-      {/* Sliding sidedrawer used for cart */}
-      <Sidedrawer blur_ref={blur_ref} duration={0.5} />
-
-      {/* ----------------------------------- */}
-
       {main_layout}
 
       {/* ----------------------------------- */}

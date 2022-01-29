@@ -31,18 +31,16 @@ const App: NextPage<AppProps> = ({ Component, pageProps }: AppProps) => {
       </Head>
 
       <AuthContextProvider>
-        <CartCtxProvider>
-          <NotificationContextProvider>
-            {/* <LoadingContext.Provider value={{ is_loading, startLoading, endLoading }}> */}
-            <LoadingContextProvider>
-              <Layout>
-                <ThemeProvider theme={theme}>
-                  <Component {...pageProps} />
-                </ThemeProvider>
-              </Layout>
-            </LoadingContextProvider>
-          </NotificationContextProvider>
-        </CartCtxProvider>
+        <NotificationContextProvider>
+          {/* <LoadingContext.Provider value={{ is_loading, startLoading, endLoading }}> */}
+          <LoadingContextProvider>
+            <Layout>
+              <ThemeProvider theme={theme}>
+                <Component {...pageProps} />
+              </ThemeProvider>
+            </Layout>
+          </LoadingContextProvider>
+        </NotificationContextProvider>
       </AuthContextProvider>
     </>
   );
