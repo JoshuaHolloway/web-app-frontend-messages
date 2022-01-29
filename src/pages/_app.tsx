@@ -3,7 +3,6 @@ import type { NextPage } from 'next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { AuthContextProvider } from '@src/code/context/auth-context';
-import { CartCtxProvider } from '@src/code/context/cart-context';
 import { LoadingContextProvider } from '@src/code/context/loading-context';
 import { NotificationContextProvider } from '@src/code/context/notification-context';
 import Layout from '@src/components/layout/layout';
